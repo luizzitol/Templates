@@ -1,7 +1,7 @@
 const express = require("express");
-
 const app = express();
 
+require("./server/database/database")();
 app.get("/", (req, res) => {
   res.json("Hi from the server");
 });
