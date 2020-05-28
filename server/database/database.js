@@ -13,6 +13,7 @@ const connectDB = () => {
       console.log("connected to DB");
     }
   );
+  mongoose.set("useCreateIndex", true);
 };
 
 module.exports = connectDB;

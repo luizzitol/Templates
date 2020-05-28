@@ -1,11 +1,18 @@
 const express = require("express");
-const app = express();
+const passport = require("passport");
 
 // Connecting to Database
 require("./server/database/database")();
 
-app.get("/", (req, res) => {
-  res.json("Hi from the server");
-});
+//Server config
+const app = express();
+app.use(express.json());
+app.use(require("./server/middleware/session"));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.listen(5000, console.log("Server listening on port 5000"));
+// Routes
+app.use("/auth", require("./server/routes/auth/authRoute"));
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, console.log(`Server listening on port ${PORT}`));
