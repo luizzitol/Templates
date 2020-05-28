@@ -25,5 +25,6 @@ router.get("/logout", (req, res) => {
 /// Routes
 
 router.use("/local", require("./local/localRoute"));
+router.use("/google", require("./google/googleRoute"));
 
 module.exports = router;

@@ -6,6 +6,7 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const UserSchema = new Schema({
   date: { type: Date, default: Date.now },
   name: { type: String, required: true },
+  googleID: String,
 });
 
 UserSchema.plugin(passportLocalMongoose);
