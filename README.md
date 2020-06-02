@@ -1,2 +1,3 @@
 # Templates
-My templates
+
+React app with Tailwind and Emotion.sh
